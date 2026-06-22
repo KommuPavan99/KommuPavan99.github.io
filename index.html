@@ -1,21 +1,461 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Pavan Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kommu Pavan Kumar | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#f8fafc;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#111827;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.3);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#38bdf8;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#38bdf8;
+}
+
+section{
+    padding:100px 10%;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:60px;
+    color:#38bdf8;
+}
+
+.hero-content h2{
+    margin:15px 0;
+    font-size:28px;
+}
+
+.hero-content p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 25px;
+    background:#38bdf8;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#0ea5e9;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:40px;
+    color:#38bdf8;
+}
+
+.about p{
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.skill-card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-8px);
+}
+
+.skill-card h3{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.skill-card ul{
+    padding-left:20px;
+}
+
+.skill-card li{
+    margin-bottom:8px;
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.project-card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+}
+
+.project-card h3{
+    color:#38bdf8;
+    margin-bottom:15px;
+}
+
+.project-card p{
+    line-height:1.8;
+}
+
+.experience-box{
+    background:#1e293b;
+    padding:30px;
+    border-radius:12px;
+    line-height:1.9;
+}
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:15px 0;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#111827;
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:42px;
+}
+
+.hero-content h2{
+    font-size:22px;
+}
+
+nav{
+    flex-direction:column;
+}
+
+nav ul{
+    margin-top:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+nav ul li{
+    margin:10px;
+}
+}
+</style>
 </head>
+
 <body>
-    <h1>Hello, I'm Pavan</h1>
-    <p>Digital Engineering Transformation</p>
 
-    <h2>Skills</h2>
-    <ul>
-        <li>Python</li>
-        <li>SQL</li>
-        <li>ServiceNow</li>
-        <li>AI/ML</li>
-    </ul>
+<nav>
+<div class="logo">Pavan Portfolio</div>
 
-    <h2>Projects</h2>
-    <p>Coming Soon...</p>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Kommu Pavan Kumar</h1>
+
+<h2>B.Tech Computer Science – PTU</h2>
+
+<p>
+Register No: 2301107044
+</p>
+
+<br>
+
+<p>
+Aspiring Software & Web Developer with a strong foundation in programming,
+databases, and modern web technologies.
+</p>
+
+<a href="#projects" class="btn">View Projects</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="about">
+
+<p>
+I am <strong>Kommu Pavan Kumar</strong>, a Computer Science undergraduate at
+<strong>Pondicherry Technological University (PTU)</strong>.
+I have a strong academic interest in programming, databases, and software development.
+</p>
+
+<p>
+My learning journey focuses on understanding core computer science concepts,
+building problem-solving skills, and gaining hands-on experience in web and software technologies.
+</p>
+
+<p>
+I am continuously working on strengthening my fundamentals in programming,
+data structures, algorithms, and system-level thinking.
+</p>
+
+<p>
+I believe in discipline, continuous learning, and practical implementation.
+</p>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">Technical Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<h3>Programming</h3>
+<ul>
+<li>C Basics</li>
+<li>Java</li>
+<li>Python (OOPS, Data Handling)</li>
+<li>JavaScript</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<h3>Web Technologies</h3>
+<ul>
+<li>HTML5</li>
+<li>CSS3</li>
+<li>Bootstrap</li>
+<li>REST APIs</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<h3>Databases</h3>
+<ul>
+<li>MySQL</li>
+<li>SQL Queries</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<h3>Machine Learning</h3>
+<ul>
+<li>TensorFlow</li>
+<li>TensorFlow Lite</li>
+<li>CNN</li>
+<li>NumPy</li>
+<li>Pillow</li>
+<li>Matplotlib</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<h3>Core CS</h3>
+<ul>
+<li>Data Structures & Algorithms</li>
+<li>Operating Systems</li>
+<li>Computer Networks</li>
+<li>Computer Organization</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<h3>Tools</h3>
+<ul>
+<li>Git</li>
+<li>GitHub</li>
+<li>Linux</li>
+<li>VS Code</li>
+<li>Flask</li>
+<li>Render</li>
+<li>Power BI</li>
+<li>Postman</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="projects-grid">
+
+<div class="project-card">
+<h3>Multi-Client UDP Chatroom Application</h3>
+
+<p>
+Developed a multi-client chatroom application using Python and UDP socket programming.
+Implemented public and private messaging, web-based user interface,
+real-time communication, and client-server architecture.
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>Plant Disease Detection</h3>
+
+<p>
+Developed an Android application using Java and TensorFlow.
+Implemented CNN-based image classification for plant disease prediction
+with image upload and real-time results.
+</p>
+
+</div>
+
+<div class="project-card">
+
+<h3>Satellite Telemetry Monitoring System</h3>
+
+<p>
+Designed and developed a telemetry monitoring system using
+C#, ASP.NET, ADO.NET and SQL Server.
+Implemented CRUD operations and real-time telemetry analytics.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<h2 class="section-title">Experience & Activities</h2>
+
+<div class="experience-box">
+
+<ul>
+
+<li>Attended technical sessions and panel discussions on Artificial Intelligence and Computer Science domains.</li>
+
+<li>Gained hands-on experience in database management and query optimization using MySQL.</li>
+
+<li>Managed social media promotions and engagement activities for events.</li>
+
+<li>Developed Android applications using Java and Object-Oriented Programming principles.</li>
+
+<li>Built a Console-Based Online Examination System using C.</li>
+
+<li>Strengthened skills in software development, databases, networking, and web technologies.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="contact">
+
+<p><strong>Name:</strong> Kommu Pavan Kumar</p>
+
+<p><strong>Email:</strong> your-email@example.com</p>
+
+<p><strong>GitHub:</strong> github.com/Kommupavan2001</p>
+
+<p><strong>LinkedIn:</strong> Add Your LinkedIn URL</p>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Kommu Pavan Kumar | Portfolio
+
+</footer>
+
 </body>
 </html>
