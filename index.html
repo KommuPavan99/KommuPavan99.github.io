@@ -1,549 +1,2870 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kommu Pavan Kumar | Portfolio</title>
+
+<meta name="description"
+content="Kommu Pavan Kumar - Computer Science Engineering student specializing in Artificial Intelligence, Machine Learning, Full Stack Development and Computer Networks.">
+
+<title>Kommu Pavan Kumar | AI & Software Developer</title>
+
 
 <style>
 
+/* =========================================================
+   GLOBAL
+========================================================= */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",Arial,sans-serif;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 :root{
---primary:#8b5cf6;
---secondary:#06b6d4;
---glass:rgba(255,255,255,.08);
---border:rgba(255,255,255,.12);
+
+    --primary:#8b5cf6;
+    --secondary:#06b6d4;
+
+    --bg:#050816;
+    --bg2:#0b1020;
+
+    --text:#ffffff;
+    --muted:#aeb7c7;
+
+    --card:rgba(255,255,255,.06);
+    --border:rgba(255,255,255,.12);
+
 }
 
 body{
-background:#050816;
-color:white;
-overflow-x:hidden;
+
+    background:var(--bg);
+    color:var(--text);
+
+    overflow-x:hidden;
+
 }
 
-/* Animated Background */
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
 
 body::before{
-content:'';
-position:fixed;
-width:800px;
-height:800px;
-background:radial-gradient(circle,
-rgba(139,92,246,.7),
-rgba(6,182,212,.3),
-transparent 70%);
-top:-250px;
-left:50%;
-transform:translateX(-50%);
-filter:blur(70px);
-z-index:-2;
-animation:float 8s ease-in-out infinite;
+
+    content:"";
+
+    position:fixed;
+
+    width:750px;
+    height:750px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(139,92,246,.35),
+        rgba(6,182,212,.15),
+        transparent 70%
+    );
+
+    top:-250px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    filter:blur(70px);
+
+    z-index:-2;
+
+    animation:float 8s ease-in-out infinite;
+
 }
 
 @keyframes float{
-0%,100%{
-transform:translateX(-50%) translateY(0);
-}
-50%{
-transform:translateX(-50%) translateY(40px);
-}
+
+    0%,100%{
+        transform:translateX(-50%) translateY(0);
+    }
+
+    50%{
+        transform:translateX(-50%) translateY(40px);
+    }
+
 }
 
-/* Navbar */
+
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 nav{
-position:fixed;
-top:0;
-width:100%;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,.3);
-backdrop-filter:blur(20px);
-z-index:1000;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:18px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(5,8,22,.78);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    z-index:1000;
+
 }
 
 .logo{
-font-size:1.5rem;
-font-weight:700;
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+}
+
+.logo span{
+
+    color:var(--secondary);
+
 }
 
 nav ul{
-display:flex;
-list-style:none;
-gap:25px;
+
+    display:flex;
+
+    list-style:none;
+
+    gap:28px;
+
 }
 
-nav ul li a{
-color:white;
-text-decoration:none;
-transition:.3s;
+nav ul a{
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    transition:.3s;
+
 }
 
-nav ul li a:hover{
-color:var(--secondary);
+nav ul a:hover,
+nav ul a.active{
+
+    color:var(--secondary);
+
 }
 
-/* Hero */
+.menu-btn{
+
+    display:none;
+
+    font-size:1.8rem;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
-min-height:100vh;
-display:grid;
-grid-template-columns:1fr 1fr;
-align-items:center;
-padding:120px 8%;
-gap:50px;
+
+    min-height:100vh;
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    align-items:center;
+
+    gap:60px;
+
+    padding:140px 8% 80px;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border:1px solid var(--border);
+
+    border-radius:50px;
+
+    background:var(--card);
+
+    color:#cbd5e1;
+
+    margin-bottom:20px;
+
 }
 
 .hero h1{
-font-size:5rem;
-line-height:1.1;
-margin-bottom:20px;
+
+    font-size:clamp(3rem,6vw,5.5rem);
+
+    line-height:1.05;
+
+    margin-bottom:20px;
+
 }
 
 .gradient{
-background:linear-gradient(
-90deg,
-#8b5cf6,
-#06b6d4
-);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero h2{
+
+    color:#d1d5db;
+
+    font-size:1.5rem;
+
+    margin-bottom:20px;
+
 }
 
 .hero p{
-font-size:1.1rem;
-color:#d1d5db;
-line-height:1.8;
-margin-bottom:30px;
-max-width:600px;
+
+    color:var(--muted);
+
+    max-width:650px;
+
+    line-height:1.8;
+
+    font-size:1.08rem;
+
+    margin-bottom:30px;
+
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
 }
 
 .btn{
-display:inline-block;
-padding:15px 35px;
-background:linear-gradient(
-135deg,
-#8b5cf6,
-#06b6d4
-);
-border-radius:12px;
-text-decoration:none;
-color:white;
-font-weight:600;
-transition:.4s;
-box-shadow:0 10px 30px rgba(139,92,246,.4);
+
+    display:inline-block;
+
+    padding:14px 25px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-primary{
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    box-shadow:
+    0 10px 30px rgba(139,92,246,.3);
+
+}
+
+.btn-secondary{
+
+    border:1px solid var(--border);
+
+    background:var(--card);
+
 }
 
 .btn:hover{
-transform:translateY(-5px);
+
+    transform:translateY(-4px);
+
 }
 
-/* Orbit */
+
+/* =========================================================
+   HERO ORBIT
+========================================================= */
+
+.hero-visual{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
 
 .orbit{
-position:relative;
-width:420px;
-height:420px;
-border:1px solid rgba(255,255,255,.15);
-border-radius:50%;
-margin:auto;
-animation:spin 25s linear infinite;
+
+    position:relative;
+
+    width:360px;
+
+    height:360px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:50%;
+
 }
 
 .center{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:120px;
-height:120px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:var(--glass);
-backdrop-filter:blur(15px);
-border-radius:20px;
-font-size:2rem;
-font-weight:bold;
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:130px;
+    height:130px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(139,92,246,.3),
+        rgba(6,182,212,.2)
+    );
+
+    border:1px solid var(--border);
+
+    font-size:2rem;
+
+    font-weight:bold;
+
+    box-shadow:
+    0 0 50px rgba(139,92,246,.3);
+
 }
 
-.icon{
-position:absolute;
-width:80px;
-height:80px;
-display:flex;
-justify-content:center;
-align-items:center;
-background:var(--glass);
-backdrop-filter:blur(15px);
-border-radius:20px;
-font-weight:bold;
+.tech{
+
+    position:absolute;
+
+    width:70px;
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:20px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(15px);
+
+    font-weight:700;
+
+    animation:pulse 3s ease-in-out infinite;
+
 }
 
-.i1{top:-20px;left:170px}
-.i2{top:60px;right:-20px}
-.i3{bottom:120px;right:-20px}
-.i4{bottom:-20px;left:170px}
-.i5{left:-20px;top:120px}
-
-@keyframes spin{
-from{transform:rotate(0deg);}
-to{transform:rotate(360deg);}
+.tech1{
+    top:-25px;
+    left:145px;
 }
 
-/* Sections */
+.tech2{
+    right:-25px;
+    top:100px;
+}
+
+.tech3{
+    right:20px;
+    bottom:20px;
+}
+
+.tech4{
+    left:145px;
+    bottom:-25px;
+}
+
+.tech5{
+    left:-25px;
+    top:100px;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
 
 section{
-padding:100px 8%;
+
+    padding:100px 8%;
+
 }
 
 .title{
-text-align:center;
-font-size:3rem;
-margin-bottom:50px;
+
+    text-align:center;
+
+    font-size:2.8rem;
+
+    margin-bottom:15px;
+
 }
 
-/* Stats */
+.subtitle{
 
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-padding:0 8% 80px;
+    text-align:center;
+
+    color:var(--muted);
+
+    max-width:750px;
+
+    margin:0 auto 50px;
+
 }
 
-.stat-card{
-text-align:center;
-background:var(--glass);
-backdrop-filter:blur(15px);
-border:1px solid var(--border);
-padding:30px;
-border-radius:20px;
-}
 
-.stat-card h2{
-font-size:2.8rem;
-background:linear-gradient(
-90deg,
-#8b5cf6,
-#06b6d4
-);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-/* Cards */
+/* =========================================================
+   CARD
+========================================================= */
 
 .card{
-background:var(--glass);
-backdrop-filter:blur(15px);
-border:1px solid var(--border);
-padding:30px;
-border-radius:25px;
-transition:.4s;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    backdrop-filter:blur(15px);
+
+    transition:.4s;
+
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 50px rgba(139,92,246,.25);
+
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 20px 50px rgba(139,92,246,.15);
+
 }
 
-/* Skills */
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:1.5fr 1fr;
+
+    gap:30px;
+
+}
+
+.about-text{
+
+    color:var(--muted);
+
+    line-height:1.9;
+
+}
+
+.education h3{
+
+    margin-bottom:15px;
+
+}
+
+.education-item{
+
+    padding:18px 0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.education-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.education-item p{
+
+    color:var(--muted);
+
+    margin-top:7px;
+
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skill-groups{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(270px,1fr));
+
+    gap:25px;
+
+}
+
+.skill-group h3{
+
+    margin-bottom:20px;
+
+}
 
 .skills{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
 }
 
 .skills span{
-padding:12px 22px;
-background:rgba(255,255,255,.08);
-border-radius:50px;
+
+    padding:9px 15px;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid var(--border);
+
+    border-radius:50px;
+
+    color:#dbeafe;
+
+    font-size:.9rem;
+
 }
 
-/* Projects */
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:25px;
+
 }
 
-.grid h3{
-margin-bottom:15px;
+.project-card{
+
+    display:flex;
+
+    flex-direction:column;
+
 }
 
-/* Contact */
+.project-icon{
 
-.contact{
-max-width:700px;
-margin:auto;
-text-align:center;
+    font-size:2.5rem;
+
+    margin-bottom:20px;
+
 }
 
-.contact p{
-margin:15px 0;
-font-size:1.1rem;
+.project-card h3{
+
+    font-size:1.4rem;
+
+    margin-bottom:15px;
+
 }
 
-/* Footer */
+.project-card p{
+
+    color:var(--muted);
+
+    line-height:1.75;
+
+    margin-bottom:20px;
+
+}
+
+.project-features{
+
+    margin:0 0 20px 18px;
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+}
+
+.project-tech{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-bottom:25px;
+
+}
+
+.project-tech span{
+
+    font-size:.8rem;
+
+    padding:6px 10px;
+
+    border-radius:6px;
+
+    background:rgba(139,92,246,.15);
+
+    border:1px solid rgba(139,92,246,.2);
+
+}
+
+.project-links{
+
+    margin-top:auto;
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.project-links a{
+
+    text-decoration:none;
+
+    padding:9px 14px;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    font-size:.9rem;
+
+    transition:.3s;
+
+}
+
+.project-links a:hover{
+
+    background:rgba(255,255,255,.08);
+
+    border-color:var(--secondary);
+
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.timeline{
+
+    max-width:900px;
+
+    margin:auto;
+
+    position:relative;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:20px;
+
+    top:0;
+
+    bottom:0;
+
+    width:2px;
+
+    background:
+    linear-gradient(
+        var(--primary),
+        var(--secondary)
+    );
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    padding-left:65px;
+
+    margin-bottom:45px;
+
+}
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:11px;
+
+    top:5px;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+
+    box-shadow:
+    0 0 20px rgba(6,182,212,.6);
+
+}
+
+.timeline-item h3{
+
+    margin-bottom:8px;
+
+}
+
+.timeline-item .date{
+
+    color:var(--secondary);
+
+    font-size:.9rem;
+
+    margin-bottom:12px;
+
+}
+
+.timeline-item p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+.timeline-item ul{
+
+    margin:12px 0 0 18px;
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+.cert-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:20px;
+
+}
+
+.cert-card{
+
+    position:relative;
+
+}
+
+.cert-icon{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+
+.cert-card h3{
+
+    margin-bottom:10px;
+
+}
+
+.cert-card p{
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+}
+
+.certificate-btn{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:8px 14px;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    color:var(--secondary);
+
+    font-size:.9rem;
+
+    transition:.3s;
+
+}
+
+.certificate-btn:hover{
+
+    background:rgba(6,182,212,.1);
+
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+
+}
+
+.contact-info p{
+
+    color:var(--muted);
+
+    margin:18px 0;
+
+    line-height:1.7;
+
+}
+
+.contact-info a{
+
+    color:var(--secondary);
+
+    text-decoration:none;
+
+}
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+input,
+textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    color:white;
+
+    outline:none;
+
+}
+
+input:focus,
+textarea:focus{
+
+    border-color:var(--secondary);
+
+}
+
+textarea{
+
+    min-height:150px;
+
+    resize:vertical;
+
+}
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
-padding:30px;
-text-align:center;
-border-top:1px solid rgba(255,255,255,.08);
-color:#9ca3af;
+
+    padding:35px 8%;
+
+    border-top:1px solid var(--border);
+
+    text-align:center;
+
+    color:#8b95a7;
+
 }
 
-/* Responsive */
+.socials{
+
+    margin-bottom:15px;
+
+}
+
+.socials a{
+
+    display:inline-block;
+
+    margin:0 8px;
+
+    text-decoration:none;
+
+    color:#cbd5e1;
+
+    transition:.3s;
+
+}
+
+.socials a:hover{
+
+    color:var(--secondary);
+
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+#topBtn{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    border:1px solid var(--border);
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:500;
+
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+    opacity .8s,
+    transform .8s;
+
+}
+
+.reveal.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media(max-width:900px){
 
-.hero{
-grid-template-columns:1fr;
-text-align:center;
+    nav{
+        padding:16px 6%;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav ul{
+
+        display:none;
+
+        position:absolute;
+
+        top:70px;
+
+        left:0;
+
+        width:100%;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        padding:25px;
+
+        background:#080c1c;
+
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .hero p{
+
+        margin-left:auto;
+        margin-right:auto;
+
+    }
+
+    .buttons{
+
+        justify-content:center;
+
+    }
+
+    .about-grid,
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero-visual{
+
+        margin-top:30px;
+
+    }
+
 }
 
-.hero h1{
-font-size:3rem;
+@media(max-width:500px){
+
+    section{
+
+        padding:80px 6%;
+
+    }
+
+    .orbit{
+
+        width:280px;
+        height:280px;
+
+    }
+
+    .center{
+
+        width:100px;
+        height:100px;
+
+    }
+
+    .tech{
+
+        width:55px;
+        height:55px;
+
+        font-size:.8rem;
+
+    }
+
+    .tech1,
+    .tech4{
+
+        left:112px;
+
+    }
+
+    .title{
+
+        font-size:2.2rem;
+
+    }
+
 }
 
-.orbit{
-width:300px;
-height:300px;
-}
 
-.center{
-width:90px;
-height:90px;
-font-size:1.5rem;
-}
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
-.icon{
-width:60px;
-height:60px;
-}
+@media(prefers-reduced-motion:reduce){
 
-.i1{left:120px}
-.i4{left:120px}
+    *{
+        scroll-behavior:auto !important;
+        animation:none !important;
+        transition:none !important;
+    }
 
-nav{
-flex-direction:column;
-gap:15px;
-}
-
-nav ul{
-flex-wrap:wrap;
-justify-content:center;
-}
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<nav>
-<div class="logo">Kommu Pavan Kumar</div>
 
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
+<!-- =======================================================
+     NAVBAR
+======================================================= -->
+
+<nav>
+
+<div class="logo">
+Pavan<span>.</span>
+</div>
+
+
+<div class="menu-btn" onclick="toggleMenu()">
+☰
+</div>
+
+
+<ul id="navMenu">
+
+<li>
+<a href="#home" class="active">Home</a>
+</li>
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#skills">Skills</a>
+</li>
+
+<li>
+<a href="#projects">Projects</a>
+</li>
+
+<li>
+<a href="#experience">Experience</a>
+</li>
+
+<li>
+<a href="#certifications">Certifications</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
+
 </ul>
+
 </nav>
 
-<section class="hero">
 
-<div>
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="hero" id="home">
+
+
+<div class="reveal">
+
+
+<div class="badge">
+👋 Computer Science Engineering Student
+</div>
+
+
 <h1>
+
 Building
-<span class="gradient">AI-Powered</span>
-Digital Experiences
+
+<span class="gradient">
+AI-Powered
+</span>
+
+Solutions
+
 </h1>
 
-<p>
-Computer Science Engineering student passionate about
-Artificial Intelligence, Machine Learning, Web Development,
-Computer Networks and Software Engineering.
-Focused on building scalable applications and solving
-real-world problems through technology.
-</p>
 
-<a href="#contact" class="btn">
-Let's Connect
-</a>
-</div>
+<h2>
+AI • Machine Learning • Full Stack Development
+</h2>
 
-<div class="orbit">
-
-<div class="center">PK</div>
-
-<div class="icon i1">Py</div>
-<div class="icon i2">JS</div>
-<div class="icon i3">AI</div>
-<div class="icon i4">SQL</div>
-<div class="icon i5">Git</div>
-
-</div>
-
-</section>
-
-<section class="stats">
-
-<div class="stat-card">
-<h2>15+</h2>
-<p>Projects Completed</p>
-</div>
-
-<div class="stat-card">
-<h2>10+</h2>
-<p>Technologies</p>
-</div>
-
-<div class="stat-card">
-<h2>3+</h2>
-<p>AI Applications</p>
-</div>
-
-<div class="stat-card">
-<h2>100%</h2>
-<p>Passion Driven</p>
-</div>
-
-</section>
-
-<section id="about">
-
-<h2 class="title">About Me</h2>
-
-<div class="card">
 
 <p>
 
-I am currently pursuing B.Tech in Computer Science Engineering
-at Puducherry Technological University.
+I am Kommu Pavan Kumar, a Computer Science Engineering student
+passionate about Artificial Intelligence, Machine Learning,
+Web Development, Computer Networks and Software Engineering.
 
-My interests include Artificial Intelligence,
-Machine Learning, Full Stack Development,
-Computer Networks, Operating Systems,
-Cloud Computing and Software Engineering.
-
-I enjoy transforming ideas into practical,
+I enjoy transforming technical concepts into practical,
 real-world software solutions.
 
 </p>
 
+
+<div class="buttons">
+
+
+<a
+href="#projects"
+class="btn btn-primary">
+
+View My Projects
+
+</a>
+
+
+<a
+href="resume.pdf"
+class="btn btn-secondary"
+download>
+
+📄 Download Resume
+
+</a>
+
+
 </div>
 
+
+</div>
+
+
+
+<div class="hero-visual reveal">
+
+
+<div class="orbit">
+
+
+<div class="center">
+PK
+</div>
+
+
+<div class="tech tech1">
+Python
+</div>
+
+
+<div class="tech tech2">
+AI
+</div>
+
+
+<div class="tech tech3">
+SQL
+</div>
+
+
+<div class="tech tech4">
+Git
+</div>
+
+
+<div class="tech tech5">
+Django
+</div>
+
+
+</div>
+
+
+</div>
+
+
 </section>
+
+
+
+<!-- =======================================================
+     ABOUT
+======================================================= -->
+
+<section id="about" class="reveal">
+
+
+<h2 class="title">
+About Me
+</h2>
+
+
+<p class="subtitle">
+
+Computer Science student focused on building practical
+software and AI-based applications.
+
+</p>
+
+
+<div class="about-grid">
+
+
+<div class="card">
+
+<p class="about-text">
+
+I am currently pursuing my B.Tech in Computer Science Engineering
+at Puducherry Technological University.
+
+My technical interests include Artificial Intelligence,
+Machine Learning, Full Stack Development, Computer Networks,
+Operating Systems, Data Analytics and Software Engineering.
+
+I have developed projects involving Django, Flask, TensorFlow,
+Python socket programming, SQL databases, REST APIs and
+AI technologies such as Ollama, Phi-3 Mini and RAG.
+
+I enjoy learning new technologies and applying my knowledge
+to solve real-world problems through software development.
+
+</p>
+
+</div>
+
+
+
+<div class="card education">
+
+
+<h3>
+🎓 Education
+</h3>
+
+
+<div class="education-item">
+
+<strong>
+B.Tech - Computer Science Engineering
+</strong>
+
+<p>
+Puducherry Technological University
+</p>
+
+<p>
+2022 - 2026
+</p>
+
+</div>
+
+
+<div class="education-item">
+
+<strong>
+Career Focus
+</strong>
+
+<p>
+Artificial Intelligence, Software Development,
+Full Stack Development and Computer Networks
+</p>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =======================================================
+     TECHNICAL SKILLS
+======================================================= -->
 
 <section id="skills">
 
-<h2 class="title">Tech Stack</h2>
 
-<div class="card skills">
+<h2 class="title">
+Technical Skills
+</h2>
 
+
+<p class="subtitle">
+
+Technologies, tools and computer science concepts
+that I have worked with.
+
+</p>
+
+
+<div class="skill-groups">
+
+
+<!-- Programming -->
+
+<div class="card skill-group reveal">
+
+<h3>
+💻 Programming Languages
+</h3>
+
+
+<div class="skills">
+
+<span>C Basics</span>
 <span>Python</span>
+<span>Python OOP</span>
+<span>Data Handling</span>
 <span>Java</span>
 <span>JavaScript</span>
+
+</div>
+
+</div>
+
+
+
+<!-- Web -->
+
+<div class="card skill-group reveal">
+
+<h3>
+🌐 Web Technologies
+</h3>
+
+
+<div class="skills">
+
 <span>HTML5</span>
 <span>CSS3</span>
-<span>MySQL</span>
-<span>TensorFlow</span>
-<span>CNN</span>
-<span>Git</span>
-<span>GitHub</span>
+<span>REST APIs</span>
+<span>Bootstrap</span>
+
+</div>
+
+</div>
+
+
+
+<!-- Frameworks -->
+
+<div class="card skill-group reveal">
+
+<h3>
+⚙️ Frameworks
+</h3>
+
+
+<div class="skills">
+
 <span>Flask</span>
-<span>Postman</span>
-<span>ASP.NET</span>
+<span>Django</span>
+<span>TensorFlow</span>
+<span>TensorFlow Lite</span>
+
+</div>
+
+</div>
+
+
+
+<!-- Databases -->
+
+<div class="card skill-group reveal">
+
+<h3>
+🗄️ Databases
+</h3>
+
+
+<div class="skills">
+
+<span>MySQL</span>
+<span>SQL Queries</span>
 <span>SQL Server</span>
+<span>SQLite</span>
+
+</div>
+
+</div>
+
+
+
+<!-- Machine Learning -->
+
+<div class="card skill-group reveal">
+
+<h3>
+🤖 Machine Learning & Libraries
+</h3>
+
+
+<div class="skills">
+
+<span>NumPy</span>
+<span>Pillow</span>
+<span>Matplotlib</span>
+<span>TensorFlow</span>
+<span>TensorFlow Lite</span>
+<span>CNN</span>
+
+</div>
+
+</div>
+
+
+
+<!-- Core CS -->
+
+<div class="card skill-group reveal">
+
+<h3>
+🧠 Core CS Concepts
+</h3>
+
+
+<div class="skills">
+
+<span>Data Structures & Algorithms</span>
+<span>Operating Systems</span>
+<span>Computer Networks</span>
+<span>Computer Organisation & Architecture</span>
+<span>OOP</span>
+<span>DBMS</span>
+
+</div>
+
+</div>
+
+
+
+<!-- Development Tools -->
+
+<div class="card skill-group reveal">
+
+<h3>
+🛠️ Development Tools
+</h3>
+
+
+<div class="skills">
+
+<span>MS Word</span>
+<span>MS Excel</span>
+<span>Power BI</span>
+<span>Linux</span>
+<span>GitHub</span>
+<span>Git</span>
+<span>VS Code</span>
+<span>Render</span>
+<span>Postman</span>
+
+</div>
+
+</div>
+
+
+
+<!-- Areas of Interest -->
+
+<div class="card skill-group reveal">
+
+<h3>
+🎯 Areas of Interest
+</h3>
+
+
+<div class="skills">
+
+<span>Computer Networks</span>
+<span>Operating Systems</span>
+<span>Web Development</span>
+<span>Frontend Engineering</span>
+<span>Backend Engineering</span>
+<span>Full Stack Development</span>
+<span>Data Analytics</span>
+<span>Machine Learning</span>
+<span>Artificial Intelligence</span>
+
+</div>
+
+</div>
+
 
 </div>
 
 </section>
+
+
+
+<!-- =======================================================
+     PROJECTS
+======================================================= -->
 
 <section id="projects">
 
-<h2 class="title">Featured Projects</h2>
 
-<div class="grid">
+<h2 class="title">
+Featured Projects
+</h2>
 
-<div class="card">
 
-<h3>💬 UDP Chatroom Application</h3>
+<p class="subtitle">
+
+Projects demonstrating my experience in AI,
+networking, software development and databases.
+
+</p>
+
+
+<div class="project-grid">
+
+
+
+<!-- =====================================================
+     PROJECT 1
+===================================================== -->
+
+<div class="card project-card reveal">
+
+
+<div class="project-icon">
+🤖
+</div>
+
+
+<h3>
+GenAI-Powered IT Service Desk Assistant
+</h3>
+
 
 <p>
-Real-time multi-client chatroom application
-using Python UDP sockets and web technologies.
+
+Developed an AI-powered IT Service Desk application
+for incident management using Django and SQLite.
+The system combines local Generative AI with a
+knowledge base to provide intelligent IT troubleshooting.
+
 </p>
+
+
+<ul class="project-features">
+
+<li>
+Integrated Phi-3 Mini local LLM through Ollama for
+offline AI-based troubleshooting assistance.
+</li>
+
+<li>
+Implemented a Knowledge Base with AI-assisted search
+and Retrieval-Augmented Generation (RAG).
+</li>
+
+<li>
+Built automatic incident categorization and
+priority prediction using AI-based query analysis.
+</li>
+
+<li>
+Designed a responsive interface using HTML, CSS
+and Bootstrap.
+</li>
+
+<li>
+Implemented secure Django Admin management.
+</li>
+
+</ul>
+
+
+<div class="project-tech">
+
+<span>Python</span>
+<span>Django</span>
+<span>SQLite</span>
+<span>Bootstrap</span>
+<span>Ollama</span>
+<span>Phi-3 Mini</span>
+<span>RAG</span>
+<span>Git</span>
+<span>GitHub</span>
 
 </div>
 
-<div class="card">
 
-<h3>🌱 Plant Disease Detection</h3>
+<div class="project-links">
 
-<p>
-Android application powered by TensorFlow CNN
-for crop disease prediction and monitoring.
-</p>
+<a
+href="#"
+target="_blank">
+
+GitHub
+
+</a>
+
+
+<a
+href="#"
+target="_blank">
+
+Project Demo
+
+</a>
 
 </div>
 
-<div class="card">
-
-<h3>🛰 Satellite Telemetry Monitoring System</h3>
-
-<p>
-ASP.NET and SQL Server based platform
-for monitoring telemetry streams and system status.
-</p>
 
 </div>
+
+
+
+<!-- =====================================================
+     PROJECT 2
+===================================================== -->
+
+<div class="card project-card reveal">
+
+
+<div class="project-icon">
+💬
+</div>
+
+
+<h3>
+Multi-Client UDP Chatroom Application
+</h3>
+
+
+<p>
+
+Developed a multi-client chatroom application using
+Python and UDP socket programming for real-time
+communication between multiple clients.
+
+</p>
+
+
+<ul class="project-features">
+
+<li>
+Implemented public and private messaging features.
+</li>
+
+<li>
+Supported multiple concurrent client connections.
+</li>
+
+<li>
+Designed a web-based user interface to display
+online users and enable chat interactions.
+</li>
+
+<li>
+Integrated frontend and backend components.
+</li>
+
+<li>
+Gained practical experience in networking,
+client-server architecture and Python development.
+</li>
+
+</ul>
+
+
+<div class="project-tech">
+
+<span>Python</span>
+<span>Socket Programming</span>
+<span>UDP Protocol</span>
+<span>Computer Networks</span>
+<span>Client-Server Architecture</span>
+<span>Web Development</span>
+
+</div>
+
+
+<div class="project-links">
+
+<a
+href="#"
+target="_blank">
+
+GitHub
+
+</a>
+
+
+<a
+href="#"
+target="_blank">
+
+Project Demo
+
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     PROJECT 3
+===================================================== -->
+
+<div class="card project-card reveal">
+
+
+<div class="project-icon">
+🛰️
+</div>
+
+
+<h3>
+Satellite Telemetry Monitoring System
+</h3>
+
+
+<p>
+
+Designed and developed a Satellite Telemetry Monitoring
+System (STMS) for real-time monitoring and management
+of satellite telemetry data.
+
+</p>
+
+
+<ul class="project-features">
+
+<li>
+Developed using C# WinForms, ASP.NET, ADO.NET
+and SQL Server.
+</li>
+
+<li>
+Implemented CRUD operations using SQL for
+satellite mission details and telemetry records.
+</li>
+
+<li>
+Developed modules to record and analyze telemetry
+parameters.
+</li>
+
+<li>
+Monitored parameters including latitude, longitude,
+altitude, temperature, power level and signal strength.
+</li>
+
+</ul>
+
+
+<div class="project-tech">
+
+<span>C#</span>
+<span>WinForms</span>
+<span>ASP.NET</span>
+<span>ADO.NET</span>
+<span>SQL Server</span>
+<span>SQL</span>
+
+</div>
+
+
+<div class="project-links">
+
+<a
+href="#"
+target="_blank">
+
+Project Link
+
+</a>
+
+</div>
+
+
+</div>
+
+
 
 </div>
 
 </section>
+
+
+
+<!-- =======================================================
+     EXPERIENCE
+======================================================= -->
+
+<section id="experience">
+
+
+<h2 class="title">
+Experience & Activities
+</h2>
+
+
+<p class="subtitle">
+
+Technical exposure, application development and
+extracurricular experiences.
+
+</p>
+
+
+<div class="timeline">
+
+
+
+<!-- EXPERIENCE 1 -->
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+
+<h3>
+Technical Sessions & Panel Discussions
+</h3>
+
+
+<div class="date">
+Technical & Professional Development
+</div>
+
+
+<p>
+
+Attended technical sessions and panel discussions
+on emerging technologies, including Artificial
+Intelligence and Computer Science domains.
+
+</p>
+
+</div>
+
+
+
+<!-- EXPERIENCE 2 -->
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+
+<h3>
+Database Management
+</h3>
+
+
+<div class="date">
+MySQL & SQL
+</div>
+
+
+<p>
+
+Gained hands-on experience in database management
+and query optimization using MySQL for efficient
+handling of datasets.
+
+</p>
+
+</div>
+
+
+
+<!-- EXPERIENCE 3 -->
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+
+<h3>
+Event Promotion & Social Media
+</h3>
+
+
+<div class="date">
+Event Outreach
+</div>
+
+
+<p>
+
+Actively managed social media promotions to increase
+outreach, engagement and visibility of events.
+
+</p>
+
+</div>
+
+
+
+<!-- EXPERIENCE 4 -->
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+
+<h3>
+Android Application Development
+</h3>
+
+
+<div class="date">
+Android Studio & Java
+</div>
+
+
+<p>
+
+Developed an Android mobile application using
+Android Studio and Java, applying Object-Oriented
+Programming concepts such as inheritance,
+encapsulation and polymorphism to build modular
+and reusable code.
+
+</p>
+
+</div>
+
+
+
+<!-- EXPERIENCE 5 -->
+
+<div class="timeline-item reveal">
+
+<div class="timeline-dot"></div>
+
+
+<h3>
+Farmer Assistance Application
+</h3>
+
+
+<div class="date">
+Android Development
+</div>
+
+
+<p>
+
+Designed and developed an Android-based farmer
+assistance application to provide agricultural
+information and support farmers in making informed
+decisions.
+
+</p>
+
+</div>
+
+
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     CERTIFICATIONS
+======================================================= -->
+
+<section id="certifications">
+
+
+<h2 class="title">
+Certifications & Achievements
+</h2>
+
+
+<p class="subtitle">
+
+Competitions, certifications and academic achievements.
+
+</p>
+
+
+<div class="cert-grid">
+
+
+
+<!-- CERT 1 -->
+
+<div class="card cert-card reveal">
+
+<div class="cert-icon">
+🏆
+</div>
+
+<h3>
+Mobile App Application Competition
+</h3>
+
+<p>
+
+<strong>2nd Place</strong>
+
+</p>
+
+<a
+href="#"
+target="_blank"
+class="certificate-btn">
+
+View Certificate
+
+</a>
+
+</div>
+
+
+
+<!-- CERT 2 -->
+
+<div class="card cert-card reveal">
+
+<div class="cert-icon">
+🌐
+</div>
+
+<h3>
+Cyberspace Competition
+</h3>
+
+<p>
+
+Space Science & Technology
+
+</p>
+
+<a
+href="#"
+target="_blank"
+class="certificate-btn">
+
+View Certificate
+
+</a>
+
+</div>
+
+
+
+<!-- CERT 3 -->
+
+<div class="card cert-card reveal">
+
+<div class="cert-icon">
+🚀
+</div>
+
+<h3>
+National Space Day Quiz
+</h3>
+
+<p>
+
+ISRO — Participant
+
+</p>
+
+<a
+href="#"
+target="_blank"
+class="certificate-btn">
+
+View Certificate
+
+</a>
+
+</div>
+
+
+
+<!-- CERT 4 -->
+
+<div class="card cert-card reveal">
+
+<div class="cert-icon">
+🎖️
+</div>
+
+<h3>
+National Cadet Corps (NCC)
+</h3>
+
+<p>
+
+Certificate Holder
+
+</p>
+
+<p>
+
+Completed NCC training emphasizing discipline,
+leadership, teamwork and civic responsibility.
+
+</p>
+
+<a
+href="#"
+target="_blank"
+class="certificate-btn">
+
+View Certificate
+
+</a>
+
+</div>
+
+
+
+<!-- CERT 5 -->
+
+<div class="card cert-card reveal">
+
+<div class="cert-icon">
+📐
+</div>
+
+<h3>
+Mathematics Olympiads
+</h3>
+
+<p>
+
+Multiple Mathematics certificates.
+
+</p>
+
+<a
+href="#"
+target="_blank"
+class="certificate-btn">
+
+View Certificate
+
+</a>
+
+</div>
+
+
+
+<!-- CERT 6 -->
+
+<div class="card cert-card reveal">
+
+<div class="cert-icon">
+🏅
+</div>
+
+<h3>
+SilverZone Olympiads
+</h3>
+
+<p>
+
+Multiple SilverZone certificates.
+
+</p>
+
+<a
+href="#"
+target="_blank"
+class="certificate-btn">
+
+View Certificate
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+     CONTACT
+======================================================= -->
 
 <section id="contact">
 
-<h2 class="title">Get In Touch</h2>
 
-<div class="card contact">
+<h2 class="title">
+Let's Connect
+</h2>
 
-<p>📧 pavankumarkommu9@gmail.com</p>
 
-<p>📱 +91 9391663041</p>
+<p class="subtitle">
 
-<p>🔗 LinkedIn: linkedin.com/in/kommu-pavan-kumar</p>
+Interested in discussing opportunities, projects
+or technology? Feel free to reach out.
 
-<p>💻 GitHub: github.com/KommuPavan99</p>
+</p>
+
+
+<div class="contact-grid">
+
+
+
+<div class="card contact-info reveal">
+
+
+<h3>
+Contact Information
+</h3>
+
+
+<p>
+
+📧
+
+<a href="mailto:pavankumarkommu9@gmail.com">
+
+pavankumarkommu9@gmail.com
+
+</a>
+
+</p>
+
+
+<p>
+
+📱
+
+<a href="tel:+919391663041">
+
++91 9391663041
+
+</a>
+
+</p>
+
+
+<p>
+
+🔗
+
+<a
+href="https://www.linkedin.com/in/kommu-pavan-kumar"
+target="_blank">
+
+LinkedIn
+
+</a>
+
+</p>
+
+
+<p>
+
+💻
+
+<a
+href="https://github.com/KommuPavan99"
+target="_blank">
+
+GitHub
+
+</a>
+
+</p>
+
 
 </div>
 
+
+
+<div class="card reveal">
+
+
+<form onsubmit="sendEmail(event)">
+
+
+<input
+type="text"
+id="name"
+placeholder="Your Name"
+required
+>
+
+
+<input
+type="email"
+id="email"
+placeholder="Your Email"
+required
+>
+
+
+<input
+type="text"
+id="subject"
+placeholder="Subject"
+required
+>
+
+
+<textarea
+id="message"
+placeholder="Your Message"
+required
+></textarea>
+
+
+<button
+type="submit"
+class="btn btn-primary">
+
+Send Message
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+
 </section>
+
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
 
 <footer>
 
-© 2026 Kommu Pavan Kumar
+
+<div class="socials">
+
+
+<a
+href="https://github.com/KommuPavan99"
+target="_blank">
+
+GitHub
+
+</a>
+
+
+<a
+href="https://www.linkedin.com/in/kommu-pavan-kumar"
+target="_blank">
+
+LinkedIn
+
+</a>
+
+
+<a
+href="mailto:pavankumarkommu9@gmail.com">
+
+Email
+
+</a>
+
+
+</div>
+
+
+<p>
+
+© 2026 Kommu Pavan Kumar.
+Built with HTML, CSS & JavaScript.
+
+</p>
+
 
 </footer>
 
+
+
+<!-- BACK TO TOP -->
+
+<button
+id="topBtn"
+onclick="topFunction()">
+
+↑
+
+</button>
+
+
+
+<script>
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMenu(){
+
+    const menu =
+    document.getElementById("navMenu");
+
+    menu.classList.toggle("show");
+
+}
+
+
+document
+.querySelectorAll("#navMenu a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        document
+        .getElementById("navMenu")
+        .classList
+        .remove("show");
+
+    });
+
+});
+
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const observer =
+
+new IntersectionObserver(
+
+(entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry
+            .target
+            .classList
+            .add("show");
+
+        }
+
+    });
+
+},
+
+{
+    threshold:.12
+}
+
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(el => {
+
+    observer.observe(el);
+
+});
+
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const topBtn =
+document.getElementById("topBtn");
+
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 500){
+
+        topBtn.style.display = "flex";
+
+    }
+
+    else{
+
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+
+function topFunction(){
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+document.querySelectorAll("section");
+
+
+const navLinks =
+document.querySelectorAll("nav ul li a");
+
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+
+    sections.forEach(section => {
+
+        const sectionTop =
+        section.offsetTop - 160;
+
+
+        if(window.scrollY >= sectionTop){
+
+            current =
+            section.getAttribute("id");
+
+        }
+
+    });
+
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+
+        if(
+            link.getAttribute("href")
+            === "#" + current
+        ){
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+
+/* =========================================================
+   CONTACT FORM
+========================================================= */
+
+function sendEmail(event){
+
+    event.preventDefault();
+
+
+    const name =
+    document.getElementById("name").value;
+
+
+    const email =
+    document.getElementById("email").value;
+
+
+    const subject =
+    document.getElementById("subject").value;
+
+
+    const message =
+    document.getElementById("message").value;
+
+
+    const body =
+
+    `Name: ${name}\n` +
+
+    `Email: ${email}\n\n` +
+
+    `${message}`;
+
+
+    window.location.href =
+
+    `mailto:pavankumarkommu9@gmail.com` +
+
+    `?subject=${encodeURIComponent(subject)}` +
+
+    `&body=${encodeURIComponent(body)}`;
+
+}
+
+
+</script>
+
+
 </body>
+
 </html>
