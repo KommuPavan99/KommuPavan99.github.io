@@ -315,14 +315,6 @@ nav ul a.active{
 
 }
 
-.btn-secondary{
-
-    border:1px solid var(--border);
-
-    background:var(--card);
-
-}
-
 .btn:hover{
 
     transform:translateY(-4px);
@@ -690,7 +682,7 @@ section{
 
     gap:8px;
 
-    margin-bottom:25px;
+    margin-top:auto;
 
 }
 
@@ -705,40 +697,6 @@ section{
     background:rgba(139,92,246,.15);
 
     border:1px solid rgba(139,92,246,.2);
-
-}
-
-.project-links{
-
-    margin-top:auto;
-
-    display:flex;
-
-    gap:10px;
-
-}
-
-.project-links a{
-
-    text-decoration:none;
-
-    padding:9px 14px;
-
-    border:1px solid var(--border);
-
-    border-radius:8px;
-
-    font-size:.9rem;
-
-    transition:.3s;
-
-}
-
-.project-links a:hover{
-
-    background:rgba(255,255,255,.08);
-
-    border-color:var(--secondary);
 
 }
 
@@ -834,16 +792,6 @@ section{
 
 }
 
-.timeline-item ul{
-
-    margin:12px 0 0 18px;
-
-    color:#cbd5e1;
-
-    line-height:1.8;
-
-}
-
 
 /* =========================================================
    CERTIFICATIONS
@@ -885,34 +833,6 @@ section{
     color:var(--muted);
 
     line-height:1.6;
-
-}
-
-.certificate-btn{
-
-    display:inline-block;
-
-    margin-top:15px;
-
-    padding:8px 14px;
-
-    border:1px solid var(--border);
-
-    border-radius:8px;
-
-    text-decoration:none;
-
-    color:var(--secondary);
-
-    font-size:.9rem;
-
-    transition:.3s;
-
-}
-
-.certificate-btn:hover{
-
-    background:rgba(6,182,212,.1);
 
 }
 
@@ -1236,9 +1156,13 @@ footer{
 @media(prefers-reduced-motion:reduce){
 
     *{
+
         scroll-behavior:auto !important;
+
         animation:none !important;
+
         transition:none !important;
+
     }
 
 }
@@ -1350,7 +1274,6 @@ real-world software solutions.
 
 <div class="buttons">
 
-
 <a
 href="#projects"
 class="btn btn-primary">
@@ -1358,17 +1281,6 @@ class="btn btn-primary">
 View My Projects
 
 </a>
-
-
-<a
-href="resume.pdf"
-class="btn btn-secondary"
-download>
-
-📄 Download Resume
-
-</a>
-
 
 </div>
 
@@ -1542,8 +1454,6 @@ that I have worked with.
 <div class="skill-groups">
 
 
-<!-- Programming -->
-
 <div class="card skill-group reveal">
 
 <h3>
@@ -1566,8 +1476,6 @@ that I have worked with.
 
 
 
-<!-- Web -->
-
 <div class="card skill-group reveal">
 
 <h3>
@@ -1587,8 +1495,6 @@ that I have worked with.
 </div>
 
 
-
-<!-- Frameworks -->
 
 <div class="card skill-group reveal">
 
@@ -1610,8 +1516,6 @@ that I have worked with.
 
 
 
-<!-- Databases -->
-
 <div class="card skill-group reveal">
 
 <h3>
@@ -1631,8 +1535,6 @@ that I have worked with.
 </div>
 
 
-
-<!-- Machine Learning -->
 
 <div class="card skill-group reveal">
 
@@ -1656,8 +1558,6 @@ that I have worked with.
 
 
 
-<!-- Core CS -->
-
 <div class="card skill-group reveal">
 
 <h3>
@@ -1679,8 +1579,6 @@ that I have worked with.
 </div>
 
 
-
-<!-- Development Tools -->
 
 <div class="card skill-group reveal">
 
@@ -1706,8 +1604,6 @@ that I have worked with.
 </div>
 
 
-
-<!-- Areas of Interest -->
 
 <div class="card skill-group reveal">
 
@@ -1763,9 +1659,7 @@ networking, software development and databases.
 
 
 
-<!-- =====================================================
-     PROJECT 1
-===================================================== -->
+<!-- PROJECT 1 -->
 
 <div class="card project-card reveal">
 
@@ -1834,35 +1728,11 @@ Implemented secure Django Admin management.
 </div>
 
 
-<div class="project-links">
-
-<a
-href="#"
-target="_blank">
-
-GitHub
-
-</a>
-
-
-<a
-href="#"
-target="_blank">
-
-Project Demo
-
-</a>
-
-</div>
-
-
 </div>
 
 
 
-<!-- =====================================================
-     PROJECT 2
-===================================================== -->
+<!-- PROJECT 2 -->
 
 <div class="card project-card reveal">
 
@@ -1925,35 +1795,11 @@ client-server architecture and Python development.
 </div>
 
 
-<div class="project-links">
-
-<a
-href="#"
-target="_blank">
-
-GitHub
-
-</a>
-
-
-<a
-href="#"
-target="_blank">
-
-Project Demo
-
-</a>
-
-</div>
-
-
 </div>
 
 
 
-<!-- =====================================================
-     PROJECT 3
-===================================================== -->
+<!-- PROJECT 3 -->
 
 <div class="card project-card reveal">
 
@@ -2014,19 +1860,6 @@ altitude, temperature, power level and signal strength.
 </div>
 
 
-<div class="project-links">
-
-<a
-href="#"
-target="_blank">
-
-Project Link
-
-</a>
-
-</div>
-
-
 </div>
 
 
@@ -2061,8 +1894,6 @@ extracurricular experiences.
 
 
 
-<!-- EXPERIENCE 1 -->
-
 <div class="timeline-item reveal">
 
 <div class="timeline-dot"></div>
@@ -2089,8 +1920,6 @@ Intelligence and Computer Science domains.
 </div>
 
 
-
-<!-- EXPERIENCE 2 -->
 
 <div class="timeline-item reveal">
 
@@ -2119,8 +1948,6 @@ handling of datasets.
 
 
 
-<!-- EXPERIENCE 3 -->
-
 <div class="timeline-item reveal">
 
 <div class="timeline-dot"></div>
@@ -2146,8 +1973,6 @@ outreach, engagement and visibility of events.
 </div>
 
 
-
-<!-- EXPERIENCE 4 -->
 
 <div class="timeline-item reveal">
 
@@ -2177,8 +2002,6 @@ and reusable code.
 </div>
 
 
-
-<!-- EXPERIENCE 5 -->
 
 <div class="timeline-item reveal">
 
@@ -2237,8 +2060,6 @@ Competitions, certifications and academic achievements.
 
 
 
-<!-- CERT 1 -->
-
 <div class="card cert-card reveal">
 
 <div class="cert-icon">
@@ -2255,20 +2076,9 @@ Mobile App Application Competition
 
 </p>
 
-<a
-href="#"
-target="_blank"
-class="certificate-btn">
-
-View Certificate
-
-</a>
-
 </div>
 
 
-
-<!-- CERT 2 -->
 
 <div class="card cert-card reveal">
 
@@ -2286,20 +2096,9 @@ Space Science & Technology
 
 </p>
 
-<a
-href="#"
-target="_blank"
-class="certificate-btn">
-
-View Certificate
-
-</a>
-
 </div>
 
 
-
-<!-- CERT 3 -->
 
 <div class="card cert-card reveal">
 
@@ -2317,20 +2116,9 @@ ISRO — Participant
 
 </p>
 
-<a
-href="#"
-target="_blank"
-class="certificate-btn">
-
-View Certificate
-
-</a>
-
 </div>
 
 
-
-<!-- CERT 4 -->
 
 <div class="card cert-card reveal">
 
@@ -2343,9 +2131,7 @@ National Cadet Corps (NCC)
 </h3>
 
 <p>
-
-Certificate Holder
-
+<strong>Certificate Holder</strong>
 </p>
 
 <p>
@@ -2355,20 +2141,9 @@ leadership, teamwork and civic responsibility.
 
 </p>
 
-<a
-href="#"
-target="_blank"
-class="certificate-btn">
-
-View Certificate
-
-</a>
-
 </div>
 
 
-
-<!-- CERT 5 -->
 
 <div class="card cert-card reveal">
 
@@ -2386,20 +2161,9 @@ Multiple Mathematics certificates.
 
 </p>
 
-<a
-href="#"
-target="_blank"
-class="certificate-btn">
-
-View Certificate
-
-</a>
-
 </div>
 
 
-
-<!-- CERT 6 -->
 
 <div class="card cert-card reveal">
 
@@ -2416,15 +2180,6 @@ SilverZone Olympiads
 Multiple SilverZone certificates.
 
 </p>
-
-<a
-href="#"
-target="_blank"
-class="certificate-btn">
-
-View Certificate
-
-</a>
 
 </div>
 
@@ -2861,10 +2616,10 @@ function sendEmail(event){
 
 }
 
-
 </script>
 
 
 </body>
 
 </html>
+
